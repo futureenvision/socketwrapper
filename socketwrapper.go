@@ -11,6 +11,7 @@ import (
 	"github.com/gorilla/websocket"
 )
 
+// NOTE: test
 // SECTION: WebSocket Handler
 type onChannel func(connection *Connection, messageType int, message string)
 
