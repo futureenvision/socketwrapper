@@ -96,8 +96,8 @@ func packChannelData(connection *Connection, messageType int, jsonString string)
 
 // SECTION: WebSocket
 type WebSocket struct {
-	host string
-	port int16
+	Host string
+	Port int16
 }
 
 func (*WebSocket) JoinGroup(connection *Connection, name string) {
@@ -199,7 +199,7 @@ func (*WebSocket) EmitToGroup(connection *Connection, messageType int, name stri
 
 func (socket *WebSocket) ListenAndServe() {
 	go processChan()
-	addr := flag.String("addr", socket.host+":"+fmt.Sprint(socket.port), "http service address")
+	addr := flag.String("addr", socket.Host+":"+fmt.Sprint(socket.Port), "http service address")
 	flag.Parse()
 	log.SetFlags(0)
 	fmt.Printf("[Servering ... %s]\n", *addr)
